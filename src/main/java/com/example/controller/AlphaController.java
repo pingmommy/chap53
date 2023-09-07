@@ -31,7 +31,6 @@ public class AlphaController {
 	
 	@GetMapping("/alpha2")
 	String alpha2(Integer line, Integer column, Character ch, Color fg, Color bg, HttpServletRequest request) {
-		
 		System.out.printf("%s %s %s",line, column,ch);
 		Alpha[][] alphas = new Alpha[20][40];
 		

@@ -8,5 +8,10 @@
 </head>
 <body>
 <h1>MVCMVC</h1>
+
+<form action="/hello">
+
+
+</form>
 </body>
 </html>

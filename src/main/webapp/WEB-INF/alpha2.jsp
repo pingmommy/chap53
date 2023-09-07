@@ -75,8 +75,33 @@ table {
 		 </select>
 		 
 	</fieldset>
+<fieldset>
+	<input type="reset">
+	<input type="submit">
+	<input type="image" src="http://via.placeholder.com/50x50">
+</fieldset>
 
-<input type="submit">
+<fieldset>
+	<legend>OTEHR</legend>
+	<label>java</label>
+	<input type="checkbox" name="lang" value="java">
+	<label>python</label>
+	<input type="checkbox" name="lang" value="python">
+	<label>C++</label>
+	<input type="checkbox" name="lang" value="cpp">
+</fieldset>
+
+<fieldset>
+	<legend>other</legend>
+	<input type="date" name="date">
+</fieldset>
+
+<fieldset>
+	<legend>comment</legend>
+	<textarea rows="10" cols="20"></textarea>
+</fieldset>
+
+
 </form>
 <table>
 <tbody>

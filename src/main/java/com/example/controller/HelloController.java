@@ -12,9 +12,7 @@ public class HelloController {
 	}
 }
 
-*********MVC패턴
-
-
+//*********MVC패턴
 //M - model
 //
 //V - view  (jsp) - 컨트롤러한테 받은 데이터를 html로 맵핑해서 view만 한다. 
