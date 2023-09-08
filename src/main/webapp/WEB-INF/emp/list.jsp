@@ -8,6 +8,26 @@
 <title>EmpList</title>
 </head>
 <form action="/emp/list">
+	<select name="deptno">
+		<c:choose>	
+			<c:when test="${empty param.deptno}">
+				<option value="" selected="selected">전체부서</option>
+			</c:when>
+			<c:otherwise>
+				<option value="">전체부서</option>
+			</c:otherwise>
+		</c:choose>
+		<c:forEach var="dept" items="${depts}">
+		<c:choose>
+			<c:when test="${param.deptno eq dept.deptno}">
+				<option value="${dept.deptno}" selected="selected">${dept.dname}</option>
+			</c:when>
+			<c:otherwise>
+				<option value="${dept.deptno}">${dept.deptno} ${dept.dname}</option>
+			</c:otherwise>
+		</c:choose>
+		</c:forEach>
+	</select>
 	<input type="text" name="search">
 	<input type="submit">
 </form>
@@ -29,12 +49,12 @@
 	<tr>
 		<td>${emp.empno}</td>
 		<td>${emp.ename}</td>
-		<td>${emp.gender}</td>
+		<td align="center">${emp.gender}</td>
 		<td>${emp.job}</td>
 		<td>${emp.mgr}</td>
 		<td>${emp.hiredate}</td>
-		<td>${emp.sal}</td>
-		<td>${emp.comm}</td>
+		<td align="right">${emp.sal}</td>
+		<td align="right">${emp.comm}</td>
 		<td>${emp.deptno}</td>
 	</tr>
 	</c:forEach>

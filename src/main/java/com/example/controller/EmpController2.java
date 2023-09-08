@@ -15,27 +15,35 @@ import jakarta.servlet.http.HttpServletRequest;
 
 @Controller
 @RequestMapping("/emp")
-public class EmpController {
+public class EmpController2 {
 	@Autowired 
 	EmpMapper empmapper;
 	
 	@Autowired
 	DeptMapper deptmapper;
 	
-	@GetMapping("/list")
-	void selectAll(Integer deptno, String search, HttpServletRequest request) {
+	@GetMapping("/list2")
+	void selectAll(Integer d, String search, HttpServletRequest request) {
 	
-		System.out.println(deptno); //null로 들어옴. 
+		System.out.println(d); //null로 들어옴. 
 		System.out.println(search); // search는 string이어서 널스트링으로 값이 들어온다. 
 		
 		
-	var list = empmapper.selectBySearch(deptno, search);
-	
-	request.setAttribute("list", list);
-	
 	var depts = deptmapper.selectAll();
-	
 	request.setAttribute("depts", depts);
+	
+	List<Emp> list = null;
+	
+	if(d == null) {
+	 list = empmapper.selectAll();
+	}
+	else {
+	 list = empmapper.selectName(d);
+	}
+	request.setAttribute("list", list);
+	 
+	 //System.out.println(d);
+	 //System.out.println(EmpController.class.getName()+"selectAll...");
 		
 	}
  // view를 리턴하지 않으면(void) 스프링이 알아서 요청한 루트를 뷰로 리턴한다.  	

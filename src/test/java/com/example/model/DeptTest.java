@@ -3,9 +3,15 @@ package com.example.model;
 import static org.assertj.core.api.Assertions.assertThat;
 
 import org.junit.jupiter.api.Test;
+import org.springframework.boot.test.context.SpringBootTest;
+
+import com.example.mapper.DeptMapper;
+
 
 public class DeptTest {
 
+	
+	
 	@Test
 	void setter() {
 		var dept = new Dept();
@@ -32,6 +38,9 @@ public class DeptTest {
 		
 		//equals는 메모리주소와는 상관없다. 값에 기반한 비교
 		System.out.println(dept1.equals(dept2));
+		System.out.println(dept1);
+		System.out.println(dept2);
+		System.out.println(dept1==dept2);
 		
 		assertThat(dept1).isEqualTo(dept2);
 	}
@@ -70,6 +79,24 @@ public class DeptTest {
 		assertThat(dept1.toString()).isEqualTo("Dept(deptno=10, dname=총무부, loc=부산)");
 	}
 	
+	@Test
+	void biulder() {
+		//요소 세팅 순서 상관없음
+		var dept1 = new Dept();
+		dept1.setDeptno(10);
+		dept1.setDname("개발부");
+		dept1.setLoc("서울");
+		//요소 세팅 순서 상관있음(순서대로)
+		var dept2 = new Dept(10,"개발부","서울");
+		//요소 세팅 순서 상관없음
+		var dept3 = Dept.builder().deptno(10).dname("개발부").loc("서울").build();
+	
+	 
+		assertThat(dept1).isEqualTo(dept2);
+		assertThat(dept1).isEqualTo(dept3);
+		assertThat(dept2).isEqualTo(dept3);
+	 
+	}
 	
 
 }

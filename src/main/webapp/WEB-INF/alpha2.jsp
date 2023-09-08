@@ -34,10 +34,10 @@ table {
 			 	<input type="radio" name="ch" id="ch" value="${ch}" checked="checked" > 
 			  </c:when>
 			  <c:when test="${!empty param.ch and param.ch eq ch}">
-			 	<input type="radio" name="ch" id="ch" value="${ch}" checked="checked" > 
+			 	<input type="radio" name="ch" id="ch" value="${ch}"  checked="checked" > 
 			  </c:when>
 			  <c:otherwise>
-			 	<input type="radio" name="ch" id="ch" value="${ch}" > 
+			 	<input type="radio" name="ch" id="ch" value="${ch}"  > 
 			 </c:otherwise>	 
 			</c:choose>
 		 </c:forEach>
