@@ -9,6 +9,11 @@
 </head>
 <body>
 <h1>CITYLIST</h1>
+<form action="/city/list">
+<input type="text" name="cityname">
+<input type="text" name="district"> 
+<input type="submit">
+</form>
 <table border="1" width ="500">
 <thead>
 	<th>id</th>

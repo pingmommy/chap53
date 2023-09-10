@@ -22,6 +22,15 @@ public class CityMapperTest {
 		assertThat(list.size()).isGreaterThan(3000);
 		
 	}
+	
+	@Test
+	void test2() {
+		var list = mapper.selectCity("A");
+		
+		System.out.println(list);
+		assertThat(list).isNotEmpty();
+		assertThat(list).isNotNull();
+	}
 
 }
 

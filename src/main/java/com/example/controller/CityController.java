@@ -17,9 +17,11 @@ public class CityController {
 	CityMapper citymapper;
 	
 	@GetMapping("/list")
-	String selectall(HttpServletRequest request) {
+	String selectall(String cityname, String district, HttpServletRequest request) {
 		
 		var list = citymapper.selectAll();
+		
+		list = citymapper.selectCity(cityname,district);
 		
 		request.setAttribute("list", list);
 		return"city/list";

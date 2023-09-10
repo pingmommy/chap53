@@ -29,6 +29,7 @@ public interface EmpMapper {
 	public static class SqlProvider {
 	     public static String selectBySearch(Integer deptno, String search) {
 	       
+	    	
 	    	var s = new SQL();
 	   		s.SELECT("*")
 	   		 .FROM("emp");
@@ -42,8 +43,9 @@ public interface EmpMapper {
 	   		}
 	   		
 	   		
+	   		System.out.println(s);
 	   		return s.toString();
-     
+	   		
 	     
 	     }
 	   }
